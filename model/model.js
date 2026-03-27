@@ -7,8 +7,8 @@ const urlSchema = new mongoose.Schema({
     },
 
     originalURL: {
-      type: String,
-      required: true,
+        type: String,
+        required: true,
     },
 
     shortCode: {
@@ -24,13 +24,13 @@ const urlSchema = new mongoose.Schema({
 
     expiresAt: {
         type: Date,
-        default: null
+        default: () => new Date(Date.now() + 60 * 60 * 1000) // 1 hour
     },
 
     urlHash: {
-      type: String,
-      required: true,
-      index: true,
+        type: String,
+        required: true,
+        index: true,
     },
 
 }, {

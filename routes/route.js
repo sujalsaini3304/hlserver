@@ -49,7 +49,6 @@ route.post("/add/link", LinkLimiter ,  async (req, res) => {
       originalURL: encrypt(normalizedURL),
       urlHash,
       shortCode,
-      expiresAt: new Date(Date.now() + 30 * 24 * 60 * 60 * 1000),
     });
 
     return res.status(201).json({
